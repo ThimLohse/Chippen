@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.chippen
+---
+testFramework: junit
+sourceLanguage: kotlin

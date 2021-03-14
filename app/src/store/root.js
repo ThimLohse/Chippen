@@ -1,8 +1,8 @@
 import { pingEpic } from './epics'
 import roomReducer from './room/reducer'
-import userReducer from './room/user'
+import userReducer from './user/reducer'
 import defaultReducer from './default/reducer'
-import { combineEpics } from 'redux-observable'
+import { combineEpics } from 'redux-most'
 import { combineReducers } from 'redux'
 
 export const rootReducer = combineReducers({
@@ -11,13 +11,12 @@ export const rootReducer = combineReducers({
   roomReducer,
 })
 
-export const rootEpic = combineEpics(pingEpic)(
-  action$,
-  store$,
-  dependencies
-).pipe(
-  catchError((error, source) => {
-    console.error(error)
-    return source
-  })
-)
+export const rootEpic = combineEpics([pingEpic])
+
+// export const rootEpic = (action$, store) =>
+//   combineEpics([pingEpic])(action$, store).pipe(
+//     catchError((error, source) => {
+//       console.error(error)
+//       return source
+//     })
+//   )

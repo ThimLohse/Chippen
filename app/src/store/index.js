@@ -1,2 +1,2 @@
 export * as actions from './actions'
-export { default as store } from './configureStore'
+export { default as createStore } from './configureStore'

@@ -18,6 +18,7 @@
         "redux": "^4.0.5",
         "redux-most": "^0.8.0",
         "redux-observable": "^1.2.0",
+        "rxjs": "^6.6.6",
         "web-vitals": "^1.0.1"
     },
     "scripts": {
